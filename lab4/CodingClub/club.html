@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="icon" type="image/jpeg" href="labtask4.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   
+    <header id="top-bar">
+        <h1 class="site-title">Coding Club</h1>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#register">Register</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        
+        <section id="about">
+            <h2>About the Club</h2>
+
+            <img src="labtask4.jpg" alt="Coding Club fox logo" class="logo">
+
+            <p>
+                Welcome to the university Coding Club! We are a friendly community where new
+                students learn to program, build small projects and prepare for contests.
+                No experience is needed &mdash; just bring your laptop and your curiosity.
+            </p>
+        </section>
+
+
+      
+        <section id="schedule" class="panel">
+            <h2>Weekly Schedule</h2>
+
+            <table>
+                <caption>Our sessions this semester</caption>
+
+                <thead>
+                    <tr>
+                        <th rowspan="2">Day</th>
+                        <th colspan="2">Session</th>
+                        <th rowspan="2">Room</th>
+                    </tr>
+                    <tr>
+                        <th>Topic</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>HTML &amp; CSS Basics</td>
+                        <td>10:00 &ndash; 12:00</td>
+                        <td>Lab 301</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Python Practice</td>
+                        <td>02:00 &ndash; 04:00</td>
+                        <td>Lab 305</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>Problem Solving</td>
+                        <td>11:00 &ndash; 01:00</td>
+                        <td>Room 402</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">All sessions are free for university students.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+
+     
+        <section id="register" class="panel">
+            <h2>Join the Club</h2>
+
+            <form action="register.php" method="post">
+                <fieldset>
+                    <legend>Registration Details</legend>
+
+                    <div class="form-row">
+                        <label for="name">Full name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="pass">Password</label>
+                        <input type="password" id="pass" name="password" placeholder="At least 6 characters" minlength="6">
+                    </div>
+
+                    <div class="form-row">
+                        <span class="field-name">Gender</span>
+                        <div class="choices">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="dept">Department</label>
+                        <select id="dept" name="department">
+                            <option value="cs">Computer Science</option>
+                            <option value="eee">EEE</option>
+                            <option value="bba">BBA</option>
+                            <option value="english">English</option>
+                        </select>
+                    </div>
+
+                    <div class="buttons">
+                        <input type="submit" value="Register">
+                        <input type="reset" value="Clear">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+
+  
+    <footer>
+        <a href="https://www.aiub.edu" target="_blank" rel="noopener noreferrer">Visit the university website</a>
+    </footer>
+
+</body>
+
+</html>

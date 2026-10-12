@@ -1,0 +1,318 @@
+/* =====================================================
+   Coding Club - style.css
+   Soft lavender-and-slate palette, Times New Roman text
+   ===================================================== */
+
+/* ---------- Colour palette (CSS variables) ---------- */
+:root {
+    --bg:        #f3f1f8;   /* pale lavender page background */
+    --surface:   #fcfbfe;   /* soft white for cards          */
+    --text:      #2e3047;   /* deep slate-navy text          */
+    --muted:     #5d6082;   /* secondary text                */
+    --nav:       #3d4468;   /* dusty indigo navigation bar   */
+    --accent:    #6872b0;   /* calm periwinkle for buttons   */
+    --accent-dk: #4e5896;   /* darker periwinkle on hover    */
+    --peach:     #f5d9bd;   /* warm highlight                */
+    --line:      #d3d0e4;   /* soft borders                  */
+    --head-bg:   #e4e2f2;   /* table header background       */
+    --row-alt:   #f6f5fb;   /* striped table rows            */
+    --note-bg:   #fbf1e6;   /* table footer note             */
+}
+
+
+/* =====================================================
+   1. UNIVERSAL SELECTOR
+   ===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   2. ELEMENT SELECTORS
+   ===================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    background-color: var(--bg);
+    padding-top: 90px;            /* space so the fixed bar does not cover content */
+}
+
+p {
+    color: var(--text);
+    margin-top: 14px;
+}
+
+section {
+    scroll-margin-top: 90px;      /* anchors stop below the fixed bar */
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px 40px;
+}
+
+fieldset {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px 26px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: var(--nav);
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select {
+    font-family: inherit;         /* keeps Times New Roman inside the form */
+    font-size: 17px;
+    color: var(--text);
+    background-color: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 9px 12px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+
+/* =====================================================
+   3. GROUP SELECTOR (same style for several elements)
+   ===================================================== */
+h1, h2, h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+}
+
+h2 {
+    color: var(--nav);
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+
+/* =====================================================
+   4. ID SELECTORS
+   ===================================================== */
+
+/* ----- Fixed navigation bar ----- */
+#top-bar {
+    position: fixed;              /* stays at the top while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;                /* always in front of other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 6%;
+    background-color: var(--nav);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- About section: width, padding, border, margin ----- */
+#about {
+    width: 90%;
+    max-width: 720px;
+    padding: 28px 30px 32px;
+    border: 2px solid var(--line);
+    border-radius: 14px;
+    margin: 30px auto;
+    background-color: var(--surface);
+}
+
+#about p {
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   5. CLASS SELECTORS
+   ===================================================== */
+.site-title {
+    color: #ffffff;
+    font-size: 26px;
+}
+
+/* ----- Navigation links side by side ----- */
+nav a {
+    display: inline-block;        /* links sit next to each other */
+    padding: 8px 18px;
+    margin-left: 6px;
+    color: #e8e7f5;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* ----- Logo image ----- */
+.logo {
+    display: block;
+    max-width: 110px;             /* never wider than 110px */
+    height: auto;
+    margin: 14px 0 6px;
+    border-radius: 12px;
+}
+
+/* ----- Cards used by schedule and form ----- */
+.panel {
+    width: 90%;
+    max-width: 720px;
+    margin: 30px auto;
+    padding: 28px 30px 32px;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+/* ----- Table ----- */
+table {
+    width: 100%;
+    margin-top: 16px;
+    border-collapse: collapse;    /* merge double borders */
+}
+
+caption {
+    caption-side: bottom;
+    padding-top: 10px;
+    font-size: 15px;
+    color: var(--muted);
+}
+
+th,
+td {
+    border: 1px solid var(--line);    /* table borders */
+    padding: 10px 12px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--head-bg);
+    color: var(--nav);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--row-alt);
+}
+
+tfoot td {
+    background-color: var(--note-bg);
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* ----- Form layout ----- */
+.form-row {
+    margin-top: 18px;
+}
+
+.form-row label,
+.field-name {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.field-name {
+    font-weight: bold;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="password"],
+.form-row select {
+    width: 100%;
+}
+
+.choices label {
+    display: inline;
+    margin: 0 18px 0 4px;
+    font-weight: normal;
+}
+
+.buttons {
+    margin-top: 26px;
+}
+
+.buttons input {
+    cursor: pointer;
+    padding: 10px 26px;
+    margin-right: 10px;
+    color: #ffffff;
+    background-color: var(--accent);
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.buttons input[type="reset"] {
+    color: var(--nav);
+    background-color: var(--head-bg);
+}
+
+.buttons input:hover {
+    background-color: var(--accent-dk);
+}
+
+.buttons input[type="reset"]:hover {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   LINK COLOURS AND HOVER EFFECT
+   ===================================================== */
+a {
+    color: var(--accent-dk);
+}
+
+a:hover {
+    color: #2f3566;
+    text-decoration: underline;
+}
+
+nav a:hover {
+    color: var(--nav);
+    background-color: var(--peach);
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   SMALL SCREENS
+   ===================================================== */
+@media (max-width: 560px) {
+    body {
+        padding-top: 120px;
+    }
+
+    section {
+        scroll-margin-top: 120px;
+    }
+
+    #top-bar {
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 6px 12px;
+        margin: 4px 2px 0;
+    }
+}
